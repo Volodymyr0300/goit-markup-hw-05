@@ -53,7 +53,7 @@ img {
   --footer-email-tel: rgba(255, 255, 255, 0.6);
   --team-background-color: #f5f4fa;
   --main-button-color: #188ce8;
-  --trans-timing: 250ms;
+  --trans-timing: 2500ms;
   --trans-timing-func: cubic-bezier(0.4, 0, 0.2, 1);
   --index-backdrop: 1000;
 }
@@ -64,6 +64,9 @@ ul {
 
 .link {
   text-decoration: none;
+  transition-property: color;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 .link:hover,
 .link:focus {
@@ -77,13 +80,11 @@ ul {
   padding-right: 15px;
 }
 
-:hover,
+/* :hover,
 :focus,
 .main-clients-icons-link:hover .main-clients-icon,
 .main-clients-icons-link:focus .main-clients-icon {
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
-}
+} */
 
 /* 
 !!! |=================================
@@ -152,7 +153,7 @@ ul {
 .header-studio.current::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   display: block;
   width: 100%;
@@ -182,7 +183,7 @@ ul {
 .header-porfolio.current::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   display: block;
   width: 100%;
@@ -213,13 +214,15 @@ ul {
 .header-contacts.current::after {
   content: "";
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   left: 0;
   display: block;
   width: 100%;
   height: 4px;
   border-radius: 2px;
   background-color: #2196f3;
+
+  /* transition-property: ; */
 }
 
 .header-nav-address-flex {
@@ -248,9 +251,18 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition-property: fill;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 .icons-header {
   content: "";
+  fill: #757575;
+
+  transition-property: fill;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 
 .icon-mail {
@@ -267,9 +279,10 @@ ul {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-color);
-
   display: flex;
 }
+
+
 .header-email:hover,
 .header-email:focus,
 .header-tel:hover,
@@ -334,6 +347,10 @@ ul {
   border-color: transparent;
   margin: 0 auto;
   display: block;
+
+  transition-property: background-color;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 
 /* 
@@ -598,11 +615,15 @@ ul {
   height: 44px;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 .icons-social-link:hover,
 .icons-social-link:focus {
   background-color: #2196f3;
-  border-radius: 50%;
 }
 
 .icons-social-link:hover .icons-social-link-svg,
@@ -661,6 +682,13 @@ ul {
   border: 1px solid #afb1b8;
   border-radius: 4px;
 }
+
+.main-clients-icons-link .main-clients-icon {
+  transition-property: fill;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
+}
+
 .main-clients-icons-link:hover .main-clients-icon,
 .main-clients-icons-link:focus .main-clients-icon {
   fill: #2196f3;
@@ -744,6 +772,10 @@ ul {
   border-radius: 4px;
   border-color: transparent;
   background-color: #f5f4fa;
+
+  transition-property: background-color, color;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 
 .portfolio-button:hover,
@@ -817,6 +849,12 @@ ul {
   line-height: 28px;
   letter-spacing: 0.03em;
   color: #ffffff;
+}
+
+.main-portfolio-link .overlay {
+  transition-property: transform;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 
 .main-portfolio-link:hover .overlay,
@@ -955,6 +993,12 @@ ul {
 } */
 .footer-svg {
   fill: #ffffff;
+}
+
+.footer-connecting-icons-social-link {
+  transition-property: background-color;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 
 .footer-connecting-icons-social-link:hover,
