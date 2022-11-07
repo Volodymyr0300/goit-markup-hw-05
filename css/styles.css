@@ -53,7 +53,7 @@ img {
   --footer-email-tel: rgba(255, 255, 255, 0.6);
   --team-background-color: #f5f4fa;
   --main-button-color: #188ce8;
-  --trans-timing: 2500ms;
+  --trans-timing: 2000ms;
   --trans-timing-func: cubic-bezier(0.4, 0, 0.2, 1);
   --index-backdrop: 1000;
 }
@@ -65,6 +65,7 @@ ul {
 .link {
   text-decoration: none;
   transition-property: color;
+  /* transition-property: fill; */
   transition-duration: var(--trans-timing);
   transition-timing-function: var(--trans-timing-func);
 }
@@ -252,17 +253,17 @@ ul {
   align-items: center;
   justify-content: center;
 
-  transition-property: fill;
+  /* transition-property: fill;
   transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition-timing-function: var(--trans-timing-func); */
 }
 .icons-header {
   content: "";
   fill: #757575;
 
-  transition-property: fill;
+  /* transition-property: fill;
   transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition-timing-function: var(--trans-timing-func); */
 }
 
 .icon-mail {
@@ -282,14 +283,18 @@ ul {
   display: flex;
 }
 
-
-.header-email:hover,
-.header-email:focus,
-.header-tel:hover,
-.header-tel:focus,
-.icons-header:hover,
-.icons-header:focus {
+.header-nav-address-li1:hover .icon-mail,
+.header-nav-address-li1:focus .icon-mail,
+.header-nav-address-li2:hover .icon-tel,
+.header-nav-address-li2:focus .icon-tel {
   fill: currentColor;
+}
+
+.icon-mail,
+.icon-tel {
+  transition-property: fill;
+  transition-duration: var(--trans-timing);
+  transition-timing-function: var(--trans-timing-func);
 }
 
 /* 
