@@ -53,8 +53,12 @@ img {
   --footer-email-tel: rgba(255, 255, 255, 0.6);
   --team-background-color: #f5f4fa;
   --main-button-color: #188ce8;
-  --trans-timing: 2000ms;
-  --trans-timing-func: cubic-bezier(0.4, 0, 0.2, 1);
+  /* --trans-timing: 250ms;
+  --trans-timing-func: cubic-bezier(0.4, 0, 0.2, 1); */
+  --trans-color: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-bc: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-fill: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --trans-transform: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   --index-backdrop: 1000;
 }
 
@@ -64,10 +68,7 @@ ul {
 
 .link {
   text-decoration: none;
-  transition-property: color;
-  /* transition-property: fill; */
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition: var(--trans-color);
 }
 .link:hover,
 .link:focus {
@@ -222,8 +223,6 @@ ul {
   height: 4px;
   border-radius: 2px;
   background-color: #2196f3;
-
-  /* transition-property: ; */
 }
 
 .header-nav-address-flex {
@@ -252,18 +251,10 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* transition-property: fill;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func); */
 }
 .icons-header {
   content: "";
   fill: #757575;
-
-  /* transition-property: fill;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func); */
 }
 
 .icon-mail {
@@ -292,9 +283,7 @@ ul {
 
 .icon-mail,
 .icon-tel {
-  transition-property: fill;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition: var(--trans-fill);
 }
 
 /* 
@@ -352,10 +341,7 @@ ul {
   border-color: transparent;
   margin: 0 auto;
   display: block;
-
-  transition-property: background-color;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition: var(--trans-bc);
 }
 
 /* 
@@ -387,15 +373,11 @@ ul {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   background-color: #ffffff;
-
   position: absolute;
   top: 50%;
   left: 50%;
-
   transform: translateX(-50%) translateY(-50%);
-
   transition: transform 300ms ease-in-out;
-  /* animation: scale-in-top 3000ms linear 1000ms; */
 }
 
 .backdrop.is-hidden .modal {
@@ -519,7 +501,6 @@ ul {
   width: 100%;
   height: 70px;
   background: rgba(47, 48, 58, 0.8);
-
   position: absolute;
   bottom: 0;
   left: 0;
@@ -527,7 +508,6 @@ ul {
 
 .main-workabout-text {
   color: #ffffff;
-
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
@@ -545,7 +525,6 @@ ul {
 
 .main-team {
   background-color: var(--team-background-color);
-
   padding-top: 94px;
   padding-bottom: 94px;
 }
@@ -592,7 +571,6 @@ ul {
   line-height: 1.18;
   letter-spacing: 0.03em;
   color: var(--text-color);
-
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
@@ -602,7 +580,6 @@ ul {
   font-size: 16px;
   line-height: 1.18;
   letter-spacing: 0.03em;
-
   margin-bottom: 16px;
 }
 .icons-social-container {
@@ -622,9 +599,7 @@ ul {
   justify-content: center;
   border-radius: 50%;
 
-  transition-property: background-color;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition: var(--trans-bc);
 }
 .icons-social-link:hover,
 .icons-social-link:focus {
@@ -665,7 +640,6 @@ ul {
   text-align: center;
   letter-spacing: 0.03em;
   color: #212121;
-
   margin-bottom: 50px;
 }
 .main-clients-list {
@@ -689,9 +663,7 @@ ul {
 }
 
 .main-clients-icons-link .main-clients-icon {
-  transition-property: fill;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition: var(--trans-fill);
 }
 
 .main-clients-icons-link:hover .main-clients-icon,
@@ -773,14 +745,10 @@ ul {
   text-align: center;
   letter-spacing: 0.03em;
   color: var(--text-color);
-
   border-radius: 4px;
   border-color: transparent;
   background-color: #f5f4fa;
-
-  transition-property: background-color, color;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition: var(--trans-bc);
 }
 
 .portfolio-button:hover,
@@ -857,9 +825,7 @@ ul {
 }
 
 .main-portfolio-link .overlay {
-  transition-property: transform;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition: var(--trans-transform);
 }
 
 .main-portfolio-link:hover .overlay,
@@ -890,6 +856,7 @@ ul {
   font-size: 16px;
   line-height: 2.25;
   letter-spacing: 0.03em;
+  color: #757575;
 }
 
 /* 
@@ -1001,9 +968,7 @@ ul {
 }
 
 .footer-connecting-icons-social-link {
-  transition-property: background-color;
-  transition-duration: var(--trans-timing);
-  transition-timing-function: var(--trans-timing-func);
+  transition: var(--trans-bc);
 }
 
 .footer-connecting-icons-social-link:hover,
